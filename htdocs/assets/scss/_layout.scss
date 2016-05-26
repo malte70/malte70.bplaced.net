@@ -1,0 +1,66 @@
+/**
+ * _layout.scss
+ * 
+ * Website layout
+ * 
+ * Copyright (c) 2016 Malte Bublitz, https://malte70.bplaced.net/
+ * All rights reserved.
+ * 
+ */
+
+header {
+	margin: 2.3em auto 1em;
+	text-align: center;
+	
+	img {
+		display: inline-block;
+		height: 128px;
+	}
+	
+	h1 {
+		font-size: $fontSizeHeadline;
+		margin: 0.3em 0 0;
+		padding: 0;
+		
+		a {
+			&:link,
+			&:visited {
+				color: $fontColor;
+				text-decoration: none;
+			}
+			&:hover,
+			&:active {
+				color: $fontColor;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+aside {
+	margin: 1em auto 1em;
+	text-align: center;
+	
+	#tagline {
+		font-style: italic;
+		
+		p {
+			margin: 0.1em;
+		}
+	}
+}
+
+main {
+	margin: 4.5em 0 2em;
+	
+	nav {
+		text-align: center;
+		font-size: $fontSizeNav;
+	}
+}
+
+footer {
+	margin: 5em 0 2em;
+	text-align: center;
+	font-size: 0.8em;
+}

@@ -1,0 +1,29 @@
+/**
+ * _variables.scss
+ * 
+ * Variable definitions for the stylesheet
+ * 
+ * Copyright (c) 2016 Malte Bublitz, https://malte70.bplaced.net/
+ * All rights reserved.
+ * 
+ */
+
+@import "mountain_living";
+
+/**
+ * Color configuration
+ */
+$fontColor:       $RigorMortis;
+$backgroundColor: $FlatBone;
+$pageBorderColor: $G445;
+$linkColor:       $Waitress;
+
+/**
+ * Font configuration
+ */
+$fontSize: 18px;
+$fontFamily: "Source Serif Pro", serif;
+$fontSizeHeadline: 2.5em;
+$fontSizeNav: 1.4em;
+$pageBorderWidth: 0.6em;
+
