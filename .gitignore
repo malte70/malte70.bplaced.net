@@ -1,0 +1,8 @@
+# 
+# .gitignore
+# 
+
+# Compass' cache folder
+.sass-cache/
+# Ignore compiled CSS files, only include SCSS source
+*.css
