@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+# 
+# mkhumanstxt
+#     Generate humans.txt
+# 
+
+## CONFIG {{{
+
+HUMANSTXT="htdocs/humans.txt"
+
+## }}}
+
+if [[ -f "${HUMANSTXT}" ]]
+then
+	rm -f "${HUMANSTXT}"
+fi
+if which figlet &>/dev/null
+then
+	USE_FIGLET=1
+else
+	USE_FIGLET=0
+	echo "$0: Warning: figlet not found" >&2
+fi
+
+(
+	echo '# humanstxt.org/'
+	echo '# The humans responsible & technology colophon'
+	echo
+	
+	if [[ $USE_FIGLET -eq 1 ]]
+	then
+		figlet -f small "malte70.bplaced.net"
+	else
+		echo
+		echo "==> malte70.bplaced.net <=="
+		echo
+	fi
+	echo
+	
+	# Owner info
+	echo '/* TEAM */'
+	echo -e "\tSite Owner: Malte Bublitz"
+	echo -e "\tTwitter: @malte70"
+	echo -e "\tLocation: Dortmund, Germany"
+	echo -e "\t"
+
+	# Technical site info
+	echo '/* SITE */'
+	echo -e "\tLast update: 2016-05-27"
+	echo -e "\tLanguage: de_DE"
+	echo -e "\tSoftware: Vim, git"
+	echo -e "\tTechnologies: HTML5, CSS3, Compass"
+	echo -e "\tHoster: bplaced.net"
+	echo -e "\t"
+
+) > "${HUMANSTXT}"
+
+
