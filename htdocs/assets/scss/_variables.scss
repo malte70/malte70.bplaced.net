@@ -19,11 +19,51 @@ $pageBorderColor: $G445;
 $linkColor:       $Waitress;
 
 /**
- * Font configuration
+ * Font family and sizes
  */
 $fontSize: 18px;
 $fontFamily: "Source Serif Pro", serif;
 $fontSizeHeadline: 2.5em;
+$fontSizeHeadlineMobile: 1.8em;
 $fontSizeNav: 1.4em;
+
+/**
+ * Page border widths
+ * On medium and small screens only border-top
+ */
 $pageBorderWidth: 0.6em;
+$pageBorderWidthMedium: 1.2em;
+$pageBorderWidthSmall: 1em;
+
+/**
+ * Header image sizes
+ * 
+ * Original PNG size: 192px
+ * Large screens:     126px (~2/3 original)
+ * Medium screens:     90px (~1/2 original)
+ * Small screens:      63px (~1/3 original)
+ */
+$headerImgHeight: 7em;
+$headerImgHeightMedium: 5em;
+$headerImgHeightSmall: 3.5em;
+
+/**
+ * Screen width limits for mobile layout
+ * 
+ * x < $screenWidthSmall
+ *    - Small screen
+ *    - Smartphone portrait
+ * 
+ * $screenWidthSmall < x < $screenWidthMedium
+ *    - Medium screen
+ *    - Smartphone landscape
+ *    - Tablet portrait
+ * 
+ * $screenWidthMedium < x
+ *    - Large screen
+ *    - Desktop/PC
+ *    - Tablet landscape
+ */
+$screenWidthMedium: 720px;
+$screenWidthSmall: 450px;
 

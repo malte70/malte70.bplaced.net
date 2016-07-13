@@ -14,7 +14,7 @@ header {
 	
 	img {
 		display: inline-block;
-		height: 128px;
+		height: $headerImgHeight;
 	}
 	
 	h1 {
@@ -37,6 +37,53 @@ header {
 	}
 }
 
+@media (max-width: $screenWidthMedium - 1) {
+	/**
+	 * For Small and medium screens
+	 */
+	header {
+		margin-top: 0.7em;
+		padding: 0 .6em;
+		
+		a {
+			display: block;
+			float: left;
+			
+			img {
+				height: $headerImgHeightMedium;
+			}
+		}
+		h1 {
+			display: block;
+			float: left;
+			margin-left: .7em;
+		}
+		&:after {
+			content: " ";
+			display: block;
+			clear: both;
+		}
+	}
+}
+@media (max-width: $screenWidthSmall) {
+	/**
+	 * Only for small screens
+	 */
+	header {
+		margin-bottom: 1.5em;
+		
+		a {
+			img {
+				height: $headerImgHeightSmall;
+			}
+		}
+		h1 {
+			font-size: $fontSizeHeadlineMobile;
+			margin-left: 1em;
+		}
+	}
+}
+
 aside {
 	margin: 1em auto 1em;
 	text-align: center;
@@ -46,6 +93,17 @@ aside {
 		
 		p {
 			margin: 0.1em;
+			
+			@media (min-width: $screenWidthMedium) {
+				.tagline-br-1 {
+					display: none;
+				}
+			}
+			@media (max-width: $screenWidthMedium - 1) {
+				.tagline-br-1 {
+					display: inline;
+				}
+			}
 		}
 	}
 }
@@ -53,9 +111,44 @@ aside {
 main {
 	margin: 4.5em 0 2em;
 	
+	@media (max-width: $screenWidthMedium) {
+		margin-top: 2.8em;
+	}
+	
 	nav {
 		text-align: center;
 		font-size: $fontSizeNav;
+		
+		p {
+			margin: 0;
+			
+			.link-divider-1,
+			.link-divider-2 {
+				display: inline;
+			}
+			.link-br-1,
+			.link-br-2 {
+				display: none;
+			}
+			@media (max-width: $screenWidthMedium - 1) {
+				/* Small and medium screens */
+				.link-divider-2 {
+					display: none;
+				}
+				.link-br-2 {
+					display: inline;
+				}
+			}
+			@media (max-width: $screenWidthSmall) {
+				/* Small screens */
+				.link-divider-1 {
+					display: none;
+				}
+				.link-br-1 {
+					display: inline;
+				}
+			}
+		}
 	}
 }
 
@@ -63,4 +156,31 @@ footer {
 	margin: 5em 0 2em;
 	text-align: center;
 	font-size: 0.8em;
+	
+	a:link, a:visited {
+		color: $fontColor;
+	}
+	&:hover {
+		a:link, a:visited {
+			color: $linkColor;
+		}
+	}
+	@media (min-width: $screenWidthMedium) {
+		/* Large screens */
+		.footer-divider-1 {
+			display: inline;
+		}
+		.footer-br-1 {
+			display: none;
+		}
+	}
+	@media (max-width: $screenWidthMedium - 1) {
+		/* Small and medium screens */
+		.footer-divider-1 {
+			display: none;
+		}
+		.footer-br-1 {
+			display: inline;
+		}
+	}
 }

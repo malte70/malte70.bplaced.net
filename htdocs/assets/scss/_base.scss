@@ -18,16 +18,33 @@ html {
 
 body {
 	font: $fontSize $fontFamily;
-	padding-top: $pageBorderWidth;
-	padding-left: $pageBorderWidth * 3;
-	padding-right: $pageBorderWidth * 3;
-	padding-bottom: $pageBorderWidth;
-	min-height: 100%;
-	
-	overflow-x: hidden; /* For Opera */
-	@include box-shadow($pageBorderColor 0 0 0 $pageBorderWidth inset);
-	
 	background: $backgroundColor;
+}
+
+@media (min-width: $screenWidthMedium) {
+	/**
+	 * Large screens: Border on all sides
+	 */
+	body {
+		padding-top: $pageBorderWidth;
+		padding-left: $pageBorderWidth * 3;
+		padding-right: $pageBorderWidth * 3;
+		padding-bottom: $pageBorderWidth;
+		min-height: 100%;
+		
+		overflow-x: hidden; /* For Opera */
+		@include box-shadow($pageBorderColor 0 0 0 $pageBorderWidth inset);
+	}
+}
+@media (min-width: $screenWidthSmall) and (max-width: $screenWidthMedium - 1) {
+	body {
+		border-top: $pageBorderWidthMedium solid $pageBorderColor;
+	}
+}
+@media (max-width: $screenWidthSmall - 1) {
+	body {
+		border-top: $pageBorderWidthSmall solid $pageBorderColor;
+	}
 }
 
 a {
