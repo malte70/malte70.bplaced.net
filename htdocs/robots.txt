@@ -1,0 +1,15 @@
+# robots.txt for malte70.bplaced.net
+
+User-agent: *
+Disallow: /impressum.html
+
+# Simply not for everyone (or just not for search engines)
+Disallow: /abook/
+Disallow: /haze-macht-wischig/
+
+# Private use only
+Disallow: /startseite/
+Disallow: /steffi/
+Disallow: /beowulf/
+Disallow: /kirby-pc/
+
