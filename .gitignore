@@ -4,7 +4,12 @@
 
 # Compass' cache folder
 .sass-cache/
+
 # Ignore compiled CSS files, only include SCSS source
 *.css
+
 # humans.txt is generated
 humans.txt
+
+# Vim's temporary files
+*.sw[po]
